@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/user/UserLoginProc.do" method="post">
+	<div> 
+		<span name="IdVal"> 아이디 : </span>	
+		<input name="IdText" type="text"></input>
+	</div>
+	<div> 
+		<span name="PassVal"> 비밀번호 : </span>	
+		<input name="PassText" type="text" maxlength="16"></input>
+	</div>
+	<div> 
+		<span name="PassVal"> 이름 : </span>	
+		<input name="PassText" type="text" maxlength="16"></input>
+	</div>
+	<div> 
+		<span name="EmailVal"> 이메일 : </span>	
+		<input name="EmailText" type="email" ></input>
+	</div>
+	<div> 
+		<span name="Sex"> 성별</span>	
+		남<input name="SexRadio" type="radio" ></input>
+		여<input name="SexRadio" type="radio" ></input>
+	</div>
+	<div> 	
+		<input name="Login_infor_send" type="submit" ></input>
+	</div>
+</form>
+</body>
+</html>

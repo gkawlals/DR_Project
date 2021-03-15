@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MainPage</title>
+</head>
+<body>
+<div>환영합니다</div>
+<button onclick="location.href:/UserLogin.do"> 로그인</button>
+<div >
+	<div> 
+		<span name="IdVal"> 아이디 : </span>	
+		<input name="IdText" type="text"></input>
+	</div>
+	<div> 
+		<span name="PassVal"> 비밀번호 : </span>	
+		<input name="PassText" type="text" maxlength="16"></input>
+	</div>
+	<div> 
+		<span name="EmailVal"> 이메일 : </span>	
+		<input name="EmailText" type="email" ></input>
+	</div>
+	<div> 
+		<span name="Sex"> 성별</span>	
+		남<input name="SexRadio" type="radio" ></input>
+		여<input name="SexRadio" type="radio" ></input>
+	</div>
+	<div> 	
+		<input name="Login_infor_send" type="sumit" >전송</input>
+	</div>
+</div>
+</body>
+</html>
