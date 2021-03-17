@@ -1,0 +1,6 @@
+package poly.persistance.mapper;
+
+@Mapper("BoardMapper")
+public interface IBoardMapper {
+
+}

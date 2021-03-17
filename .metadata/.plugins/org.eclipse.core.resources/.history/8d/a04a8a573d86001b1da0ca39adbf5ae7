@@ -1,0 +1,9 @@
+package poly.service;
+
+import poly.dto.NoticeDTO;
+
+public interface IBoardService {
+
+	int insertPost(NoticeDTO pDTO);
+	
+}

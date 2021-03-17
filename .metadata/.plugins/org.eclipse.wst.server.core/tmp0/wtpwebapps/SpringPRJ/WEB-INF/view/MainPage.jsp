@@ -4,10 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>MainPage</title>
+<title>MainPage</title>	
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <div>환영합니다</div>
-<button onclick="location.href:/UserLogin.do"> 로그인</button>
+<button onclick="location.href:'/User/UserLogin.do'"> 로그인</button>
+
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=475e789d58d715539c6e2d98dfe2089c"></script>
+		<script type="text/javascript" src="/CircleMap/MapTec.js"></script>
 </body>
 </html>

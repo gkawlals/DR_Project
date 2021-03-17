@@ -2,14 +2,38 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="poly.persistance.mapper.IUserMapper">
 
-	<!-- 아이디 비밀번호  -->
+	<!-- 아이디 비밀번호를 기준으로 로그인  -->
 <select id="getLoginInfo" resultType="UserDTO">
 SELECT 
 NO, 
 ID, 
 PWD, 
 NAME 
-FROM USER_INFO
+FROM DRUserTable
 WHERE ID=#{id} AND PWD=#{pwd}
 </select>
+
+<insert id="SignUp" parameterType="UserDTO" >
+INSERT INTO DRUserTable ( 
+USER_NO,
+USER_ID, 
+NAME, 
+PASSWORD,
+EMAIL
+) VALUES ( 
+USER_SEQ.NEXTVAL,
+#{user_id},	
+#{name},
+#{password},
+#{email}
+)
+</insert>
+
+<select id="getUserExists" parameterType="UserDto" resultType="UserDto">
+	<!-- 이문구는  -->
+	SELECT DECODE(COUNT(1), 0, 'N','Y') AS EXISTS_YN
+		FROM DRUserTable
+	WHERE EMAIL = #{email}
+</select>
+
 </mapper>

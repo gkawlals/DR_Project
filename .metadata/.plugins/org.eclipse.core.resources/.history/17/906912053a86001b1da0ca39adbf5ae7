@@ -1,0 +1,7 @@
+package poly.service.impl;
+
+import poly.service.IBoardService;
+
+public class BoardService implements IBoardService{
+
+}

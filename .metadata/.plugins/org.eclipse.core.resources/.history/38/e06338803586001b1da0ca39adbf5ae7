@@ -1,0 +1,8 @@
+package poly.controller;
+
+public class BoardController {
+	
+	Logger log = Logger.getLogger(this.getClass());
+
+
+}

@@ -1,0 +1,11 @@
+package poly.persistance.mapper;
+
+import config.Mapper;
+import poly.dto.NoticeDTO;
+
+@Mapper("BoardMapper")
+public interface IBoardMapper {
+
+	int insertPost(NoticeDTO pDTO);
+
+}
