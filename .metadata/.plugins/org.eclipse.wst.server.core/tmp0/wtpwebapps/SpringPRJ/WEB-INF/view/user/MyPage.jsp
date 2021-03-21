@@ -13,7 +13,7 @@
 			닉네임<input type="text" id="nicname">
 		</div>
 		<div>
-				<image src="" > <!-- ajax 사용해서 image 불러오기 -->
+				<image src="" style="width:''; height:''"> <!-- ajax 사용해서 image 불러오기 -->
 		</div>
 	</div>
 </form>

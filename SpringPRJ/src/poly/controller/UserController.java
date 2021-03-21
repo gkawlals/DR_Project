@@ -29,9 +29,19 @@ public class UserController {
 	
 	@RequestMapping(value="user/UserLogin.do")
 	public String userLogin(HttpServletRequest request, ModelMap model) {
+		
 		log.info(this.getClass() + "user/userLogin start!!");
+		
 		log.info(this.getClass() + "user/userLogin end!!");
 		
+		return "/user/UserLogin.do";
+	}
+	
+	@RequestMapping(value="user/SignUpPage.do")
+	public String UserSignUpPage(HttpServletRequest request, ModelMap model) {
+		log.info(this.getClass() + "user/UserSignUpPage start!!");
+		
+		log.info(this.getClass() + "user/UserSignUpPage end!!");
 		return "/user/userLogin";
 	}
 	@RequestMapping(value = "user/SignUp.do")
@@ -92,6 +102,7 @@ public class UserController {
 		return "/main.do";
 	}
 	@RequestMapping(value="user/userLoginProc.do")
+	
 	public String userLoginProc(HttpServletRequest request, ModelMap model, HttpSession session) throws Exception{
 		log.info(this.getClass() + "user/userLoginProc start!!");
 		

@@ -3,16 +3,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>MainPage</title>	
+  <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<div>환영합니다</div>
-<button onclick="location.href:'/User/UserLogin.do'"> 로그인</button>
-
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=475e789d58d715539c6e2d98dfe2089c"></script>
-		<script type="text/javascript" src="/CircleMap/MapTec.js"></script>
+<div >
+	<div>
+		<div>
+			<a href="/user/UserLogin.do"><input type="button" value="로그인"></a>
+		</div>
+	</div>
+	<div>
+		<div>
+			<a href="/user/MyPage.do"><input type="button" value=" 마이페이지"></a>
+		</div>
+	</div>
+</div>
 </body>
 </html>
