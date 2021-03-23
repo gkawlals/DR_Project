@@ -23,6 +23,8 @@ public class MainController {
 		
 		return "/loginPage";
 	}
+	
+	@RequestMapping(value="Filetest")
 			
 }
 

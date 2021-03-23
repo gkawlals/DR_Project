@@ -27,6 +27,11 @@
 			<a href="loginPage.do"><input type="button" value=" 마이페이지"></a>
 		</div>
 	</div>
+	<div>
+		<div>
+			<a href="Filetest"><input type="button" value=" File "></a>
+		</div>
+	</div>
 </div>
 </body>
 </html>

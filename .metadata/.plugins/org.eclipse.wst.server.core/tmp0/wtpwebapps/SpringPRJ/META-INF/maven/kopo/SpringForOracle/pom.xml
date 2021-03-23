@@ -27,12 +27,14 @@
 	<dependencies>
 	
 	<!-- ajax -->
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.10.3</version>
-</dependency>
-
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.10.3</version>
+		</dependency>
+		
+	<!-- Tesseract4  -->
+		
 	<!-- Mail  -->
 		<dependency>
 			<groupId>javax.mail</groupId>

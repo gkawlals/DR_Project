@@ -36,13 +36,7 @@ public class UserController {
 		return "/user/UserLogin.do";
 	}
 	
-	@RequestMapping(value="user/SignUpPage.do")
-	public String UserSignUpPage(HttpServletRequest request, ModelMap model) {
-		log.info(this.getClass() + "user/UserSignUpPage start!!");
-		
-		log.info(this.getClass() + "user/UserSignUpPage end!!");
-		return "/user/userLogin";
-	}
+
 	@RequestMapping(value = "user/SignUp.do")
 	public String newUser (HttpServletRequest request, ModelMap model) throws Exception {
 		
