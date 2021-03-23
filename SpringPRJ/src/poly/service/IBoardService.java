@@ -6,14 +6,15 @@ import poly.dto.NoticeDTO;
 
 public interface IBoardService {
 
-	int insertPost(NoticeDTO pDTO);
-	
 	List<NoticeDTO> getBoardList();
-	
+
+	NoticeDTO getPostDetail(NoticeDTO pDTO);
+
 	int getDeletePost(NoticeDTO pDTO);
 
 	int getUpdatePost(NoticeDTO pDTO);
 
-	NoticeDTO getPostDetail(NoticeDTO pDTO);
-	
+
+
+
 }

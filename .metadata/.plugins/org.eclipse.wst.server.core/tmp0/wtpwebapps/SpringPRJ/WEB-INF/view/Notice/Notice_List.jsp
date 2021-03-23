@@ -74,8 +74,7 @@
 
                         <div class="sprite_more_icon" data-name="more">
                             <ul class="toggle_box">
-                                <a href="/Notice/NoticeDetail.do"><li>수정</li></a>
-                                <a href="/Notice/NoticeDelete.do"><li>삭제</li></a>
+                                <li><button onclick="location.href='/Notice/NoticeDetail.do'">편집</button></li>
                             </ul>
                         </div>
                         

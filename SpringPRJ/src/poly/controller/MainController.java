@@ -16,6 +16,13 @@ public class MainController {
 		
 		return "/MainPage";
 	}
+	
+	@RequestMapping(value="loginPage")
+	public String loginPage() {
+		log.info(this.getClass());
+		
+		return "/loginPage";
+	}
 			
 }
 

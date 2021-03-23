@@ -2,12 +2,12 @@ package poly.dto;
 
 public class NoticeDTO {
 	
-	private String notice_no;
-	private String notice;
-	private String content;
-	private String comment;
-	private String like;
-	private String reg_id;
+	private String notice_no; // 게시글 번호 
+	private String notice;		//게시글 url 
+	private String content;		// 한출평 
+	private String comment; // 뎃글 
+	private String like;		//좋아요 
+	private String reg_id;		// 
 	private String notice_date;
 	private String update_date;
 	private String update_id;

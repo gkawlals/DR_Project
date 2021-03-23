@@ -8,14 +8,13 @@ import poly.dto.NoticeDTO;
 @Mapper("BoardMapper")
 public interface IBoardMapper {
 
-	int insertPost(NoticeDTO pDTO);
-
 	List<NoticeDTO> getBoardList();
 
-	int getDeletePost(NoticeDTO pDTO);
+	NoticeDTO getPostDetail();
 
-	int getUpdatePost(NoticeDTO pDTO);
+	int getDeletePost();
 
-	NoticeDTO getPostDetail(NoticeDTO pDTO);
+	int getUpdatePost();
+
 
 }

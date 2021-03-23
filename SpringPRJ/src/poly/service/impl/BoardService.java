@@ -14,38 +14,27 @@ import poly.service.IBoardService;
 public class BoardService implements IBoardService {
 	
 	@Resource(name="BoardMapper")
-	IBoardMapper BoardMapper;
+	private IBoardMapper BoardMapper;
 
-	@Override
-	public int insertPost(NoticeDTO pDTO) {
-		// TODO Auto-generated method stub
-		return BoardMapper.insertPost(pDTO);
-	}
-
-	@Override
 	public List<NoticeDTO> getBoardList() {
 		// TODO Auto-generated method stub
 		return BoardMapper.getBoardList();
 	}
 
-	@Override
-	public int getDeletePost(NoticeDTO pDTO) {
-		// TODO Auto-generated method stub
-		return BoardMapper.getDeletePost(pDTO);
-	}
-
-	@Override
-	public int getUpdatePost(NoticeDTO pDTO) {
-		// TODO Auto-generated method stub
-		return BoardMapper.getUpdatePost(pDTO);
-	}
-	
-
-	@Override
 	public NoticeDTO getPostDetail(NoticeDTO pDTO) {
 		// TODO Auto-generated method stub
-		return BoardMapper.getPostDetail(pDTO);
+		return BoardMapper.getPostDetail();
 	}
-	
+
+	public int getDeletePost(NoticeDTO pDTO) {
+		// TODO Auto-generated method stub
+		return BoardMapper.getDeletePost();
+	}
+
+	public int getUpdatePost(NoticeDTO pDTO) {
+		// TODO Auto-generated method stub
+		return BoardMapper.getUpdatePost();
+	}
+
 
 }
