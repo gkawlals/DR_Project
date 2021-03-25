@@ -1,7 +1,6 @@
 package poly.dto;
 
 
-
 public class MailDTO {
 
 	private String toMail;
