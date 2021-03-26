@@ -6,14 +6,13 @@ package poly.dto;
  */
 public class UserDTO {
 	
-	private String user_no;// 유저 번
+	private String user_no;// 유저 번호
 	private String id; // 아이디
 	private String pwd; // 비번
 	private String name; // 이름
 	private String email; // eamil 
 	private String gender; // 성별
-	private String Date; // 가입 일
-	private String reg_id; // 수정아이디 
+	private String reg_dt; // 가입 일
 	private String update_dt; // 수정날
 	private String exists_yn; // 중복확인 이메일 유무 
 	
@@ -35,24 +34,17 @@ public class UserDTO {
 	public void setUser_no(String user_no) {
 		this.user_no = user_no;
 	}
-
+	public String getReg_dt() {
+		return reg_dt;
+	}
+	public void setReg_dt(String reg_dt) {
+		this.reg_dt = reg_dt;
+	}
 	public String getGender() {
 		return gender;
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
-	}
-	public String getDate() {
-		return Date;
-	}
-	public void setDate(String date) {
-		Date = date;
-	}
-	public String getReg_id() {
-		return reg_id;
-	}
-	public void setReg_id(String reg_id) {
-		this.reg_id = reg_id;
 	}
 	public String getUpdate_dt() {
 		return update_dt;

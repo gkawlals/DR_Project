@@ -6,6 +6,8 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
     <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
-    <fullyQualifiedTypeName name="poly.util.CmmUtil"/>
+    <fullyQualifiedTypeName name="poly.util.DateUtil"/>
+    <fullyQualifiedTypeName name="poly.util.FileUtil"/>
     <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="poly.util.CmmUtil"/>
 </qualifiedTypeNameHistroy>

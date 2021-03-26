@@ -29,7 +29,7 @@
 	</div>
 	<div>
 		<div>
-			<a href="Filetest"><input type="button" value=" File "></a>
+			<a href="Filetest.do"><input type="button" value=" File "></a>
 		</div>
 	</div>
 </div>

@@ -153,4 +153,16 @@ public class UserController {
 		
 		return "/user/redirect";
 	}		
+	
+	@RequestMapping(value="/user/FindPass.do")
+	public String FindPassId(HttpSession session, Model model) throws Exception{
+		
+		log.info(this.getClass().getName() +  " FindPass_Page Open Start !");
+		
+		
+		
+		log.info(this.getClass().getName() +  " FindPass_Page Open End !");
+		
+		return "loginPage.do";
+	}
 }

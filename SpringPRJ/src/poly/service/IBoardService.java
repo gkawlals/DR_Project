@@ -17,6 +17,8 @@ public interface IBoardService {
 
 	int getUpdatePost(NoticeDTO pDTO);
 
+	NoticeDTO getImage(NoticeDTO pDTO) throws Exception;
+
 
 
 }

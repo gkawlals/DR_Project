@@ -5,14 +5,12 @@ public class NoticeDTO {
 	private String notice_no; // 게시글 번호 
 	private String notice;		//게시글 url 
 	private String content;		// Image_name  
-	private String comment; // 뎃글 
 	private String like;		//좋아요 
-	private String reg_id;		// 
-	private String notice_date;
-	private String update_date;
-	private String update_id;
-	
-	
+	private String reg_id;		// 사용자 아이디 
+	private String notice_date; // 업로드 날짜
+	private String update_id; // 수정한 사용자 아이디 
+	private String update_date; // 수정 날짜
+
 	public String getNotice_no() {
 		return notice_no;
 	}
@@ -30,12 +28,6 @@ public class NoticeDTO {
 	}
 	public void setContent(String content) {
 		this.content = content;
-	}
-	public String getComment() {
-		return comment;
-	}
-	public void setComment(String comment) {
-		this.comment = comment;
 	}
 	public String getLike() {
 		return like;
@@ -67,7 +59,5 @@ public class NoticeDTO {
 	public void setUpdate_id(String update_id) {
 		this.update_id = update_id;
 	}
-
-	
 
 }

@@ -1,150 +1,121 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="poly.dto.NoticeDTO"%>
+<%@page import="poly.util.CmmUtil"%>
+<%
+	List<NoticeDTO> rList = (List<NoticeDTO>) request.getAttribute("rList");
+%>
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Title</title>
-
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
+<!-- top Start  -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
+	<!-- top 시작 -->
+	<div>
+		<%@ include file="/WEB-INF/view/user/top.jsp"%>
+	</div>
+	<!-- top 끝 -->
 
-<section id="container">
+	<div style="display: inline-block; magin: 0;">
+		<div class="input-gruop">
+			<input type="text" placeholder="이름" name="post_title" id="post_title"
+				style="hieght: 40ox !important" /> <input type="button"
+				onclick="JavaScript:search();" value="검색" />
+		</div>
+	</div>
+	<div id="subject"> <input type="text" valuse="여자친구"></div>
+	<div id="resContainer"></div>
+	<div class="searchList">
+		<table border='1' id="searchLsit">
+			<tr>
+				<td>제목</td>
+				<td>게시일</td>
+				<td>게시자</td>
+			</tr>
 
+			<%
+				for (NoticeDTO e : rList) {
+			%>
+			<tr>
+				<td><a href="/board/boardDetail.do?no=<%=e.getNotice_no()%>"><%=e.getNotice()%></td>
+				</a>
+				<td><%=e.getNotice_date()%></td>
+				<td><%=e.getReg_id()%></td>
 
-    <header id="header">
-        <section class="inner">
+			</tr>
+			<%
+				}
+			%>
+		</table>
+		<div> 
+		</div>
+	</div>
+	<div style="width: 100%; text-align: right; magin-top: 5px;">
 
-            <h1 class="logo">
-                <a href="index.html">
-                    <div class="sprite_insta_icon"></div>
-                    <div class="sprite_write_logo"></div>
-                </a>
-            </h1>
-
-            <div class="search_box">
-                <input type="text" placeholder="검색" id="search-field">
-
-                <div class="fake_field">
-                    <span class="sprite_small_search_icon"></span>
-                    <span>검색</span>
-                </div>
-            </div>
-
-            <div class="right_icons">
-            
-                <a href="/CircleMap/MapApi.do"><div class="sprite_compass_icon"></div></a>
-         
-                <a href="/user/MyPage.do"><div class="sprite_user_icon_outline"></div></a>
-                
-            </div>
-
-        </section>
-
-    </header>
-
-    <section id="main_container">
-        <div class="inner">
-
-            <div class="contents_box">
-                <article class="contents">
-                    <header class="top">
-                    
-                        <div class="user_container">
-                            <div class="profile_img">
-                            <!-- Fiile 경로 불러와 -->
-                                <img src="imgs/thumb.jpeg" alt="프로필이미지">
-                            </div>
-                            <!--  user_id or nicname  -->
-                            <div class="user_name">
-                                <div class="nick_name m_text">KindTiger</div>
-                                <!-- 위치정보 가져올수 있으면 가져오기  -->
-                                <div class="country s_text">Seoul, South Korea</div>
-                            </div>
-
-                        </div>
-
-                        <div class="sprite_more_icon" data-name="more">
-                            <ul class="toggle_box">
-                                <li><button onclick="location.href='/Notice/NoticeDetail.do'">편집</button></li>
-                            </ul>
-                        </div>
-                        
-                        
-                    </header>
-					<!-- 본인 게시판 사진 -->
-                    <div class="img_section">
-                        <div class="trans_inner">
-                            <div><img src="imgs/img_section/img01.jpg" alt="visual01"></div>
-                        </div>
-                    </div>
-
-                    <div class="bottom_icons">
-                        <div class="left_icons">
-                            <div class="heart_btn">
-                                <div class="sprite_heart_icon_outline" name="39" data-name="heartbeat"></div>
-                            </div>
-                        </div>
-                    </div>
-					<!-- Like Count  -->
-                    <div class="likes m_text">
-                        좋아요
-                        <span id="like-count-39">2,346</span>
-                        <span id="bookmark-count-39"></span>
-                        개
-                    </div>
-					<!-- 여기에 코멘트 대신 title(제목 넣기) -->
-                    <div class="comment_container">
-                        <div class="comment" id="comment-list-ajax-post37">
-                            <div class="comment-detail">
-                                <div class="nick_name m_text">dongdong2</div>
-                                <div>강아지가 너무 귀여워요~!</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- title div로 사용하기  -->
-                    
-                    
-                    
-                    <!-- 여기서 ajax or infinity scroll  -->
-                </article>
-                
-            </div>
-            <input type="hidden" id="page" value="1">
-
-            <div class="side_box">
-                <div class="user_profile">
-                    <div class="profile_thumb">
-                        <img src="imgs/thumb.jpeg" alt="프로필사진">
-                    </div>
-                    <div class="detail">
-                        <div class="id m_text">KindTiger</div>
-                        <div class="ko_name">심선범</div>
-                    </div>
-                </div>
-
-                <article class="story">
-                    <header class="story_header">
-                        <div>스토리</div>
-                        <div class="more">모두 보기</div>
-                    </header>
-
-                </article>
-            </div>
-
-        </div>
-    </section>
-</section>
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="js/main.js"></script>
+		<button type=button onclick="location.href='/Notice/newPost.do'">새글</button>
+	</div>
 </body>
+<script>
+	function search() {
+		//alert("test");
+		var Notice = $('#Notice').val();
+		//alert("제목 : " + post_title);
+		if ($('#Notice').val() == "") {
+			$('#Notice').focus();
+			return false;
+		}
+
+		console.log("Notice : " + Notice);
+
+		$.ajax({
+			url : '/board/searchList.do',
+			type : 'post',
+			data : {
+				"post_title" : post_title
+			},
+			success : function(data) {
+				console.log("test");
+				console.log(data)
+
+				var resHTML = "";
+				resHTML += '<tr>';
+				resHTML += '<td>글 번호</td>';
+				resHTML += '<td>경로</td>';
+				resHTML += '<td>게시일 </td>';
+				resHTML += '<td>게시자</td>';
+				resHTML += '</tr>';
+
+				if (data.length == 0) {
+
+					resHTML += '<tr>';
+					resHTML += '<td>-</td>';
+					resHTML += '<td>-</td>';
+					resHTML += '<td>-</td>';
+					resHTML += '<td>-</td>';
+					resHTML += '</tr>';
+
+				} else {
+
+					for (var i = 0; i < data.length; i++) {
+						resHTML += '<tr>';
+						resHTML += '<td>' + data[i].post_no + '</td>';
+						resHTML += '<td>' + data[i].post_title + '</td>';
+						resHTML += '<td>' + data[i].reg_dt + '</td>';
+						resHTML += '<td>' + data[i].reg_id + '</td>';
+						resHTML += '</tr>';
+					}
+
+				}
+				$("#searchLsit").html(resHTML);
+
+			}
+		})
+	}
+</script>
 </html>

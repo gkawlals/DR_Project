@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="poly.persistance.mapper.INoticeMapper">
+	<!-- 게시글 검색 쿼리 데이터 낭비가 되니까 * 대신 불러올 것들만 다시 적어 쿼리 만들기 -->
+	<select id="getBoardList" resultType="NoticeDTO">
+	SELECT * FROM NOTICETABLE
+	</select>
+	
+	<!-- 게시글 추가시 사용되는 쿼리 -->
+	<insert id="insertPost" parameterType="NoticeDTO">
+	INSERT INTO NOTICETABLE(
+	NOTICE_NO,
+	NOTICE,
+	CONTENT,
+	LIKE,
+	REG_ID,
+	NOTICE_DATE,
+	UPDATE_ID,
+	UPDATE_DATE
+	)VALUES(
+	NOTICE_SEQ.NEXTVAL,
+	#{notice},
+	#{content},
+	0,
+	#{reg_id},
+	NOW(),
+	#{reg_id},
+	NOW()
+	)
+	</insert>
+	
+	
+	<!-- 개인이 글 수정시에 필요한 문구 개인 게시글 입장  -->
+	<select id="searchList" parameterType="NoticeDTO" resultType="NoticeDTO">
+	SELECT 
+		* 
+	FROM 
+		NOTICETABLE
+	WHERE 
+	 	NOTICE LIKE '%' || #{notice} || '%'
+	</select>
+
+	<!-- 글이 수정될때 사용하는 쿼리문  -->
+	<update id="getUpdatePost" parameterType="BoardDto">
+	UPDATE NOTICETABLE 
+	SET
+	 	NOTICE=#{notice},
+	 	POST_CONTENT=#{post_content}	 	
+	 WHERE 
+	 	POST_NO=#{post_no}
+	</update>
+	
+	<!-- 게시글 삭제할때 필요한 쿼리문 -->
+	<delete id="getDeletePost"  parameterType="BoardDto">
+	DELETE FROM BOARD WHERE POST_NO=#{post_no}
+	</delete>
+	
+</mapper>

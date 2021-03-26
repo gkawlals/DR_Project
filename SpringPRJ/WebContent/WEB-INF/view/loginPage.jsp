@@ -15,7 +15,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../resourceLogin/vendor/animate/animate.css">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="../resourceLogin/vendor/css-hamburgers/hamburgers.min.css"
+	<link rel="stylesheet" type="text/css" href="../resourceLogin/vendor/css-hamburgers/hamburgers.min.css">
 <!--============================================== ===============================================-->
 	<link rel="stylesheet" type="text/css" href="../resourceLogin/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
@@ -36,7 +36,7 @@
 					<span class="login100-form-title">
 						Circle Login
 					</span>
-
+															<!-- data-validate = 공백일때 경고문구를 보여주기  -->
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
@@ -53,19 +53,19 @@
 						</span>
 					</div>
 					
-					<div class="container-login100-form-btn">
+					<div class="container-login100-form-btn validate-input">
 						<button class="login100-form-btn" onclick="location.href='/user/UserProc.do'">
 							Login
 						</button>
 					</div>
 
-					<div class="text-center p-t-12">
+					<div class="text-center p-t-12" >
 						<span class="txt1">
 							Forgot
 						</span>
-						<a class="txt2" href="/user/FindPass.do">
+						<button class="txt2" onclick="location.href='/user/FindPass.do'">
 							Username / Password?
-						</a>
+						</button>
 					</div>
 
 					<div class="text-center p-t-136">
