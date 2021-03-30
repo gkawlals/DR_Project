@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="org.spring"/>
+		<item key="selection" value="login100-form "/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="login100-form "/>
+			<item value="login100-form validate"/>
+			<item value="login100-form"/>
+			<item value="wrap-input100"/>
+			<item value="Email"/>
 			<item value="org.spring"/>
 			<item value="org.springframwork"/>
 			<item value="org"/>
@@ -18,11 +23,6 @@
 			<item value="fileup"/>
 			<item value="hambur"/>
 			<item value="ham"/>
-			<item value="background"/>
-			<item value="//..."/>
-			<item value="user.home"/>
-			<item value=".."/>
-			<item value="../"/>
 		</list>
 		<list key="replacehistory">
 			<item value=".."/>
@@ -32,8 +32,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1109"/>
-		<item key="DIALOG_Y_ORIGIN" value="405"/>
+		<item key="DIALOG_X_ORIGIN" value="750"/>
+		<item key="DIALOG_Y_ORIGIN" value="371"/>
 		<item key="DIALOG_WIDTH" value="294"/>
 		<item key="DIALOG_HEIGHT" value="401"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>

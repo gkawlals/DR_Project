@@ -21,7 +21,7 @@
 	<br/>
 	<br/>
 	<!-- img_file을 불러올때 script로 파일명 불러오고, 경로마지막에 붙여주기  -->
-	<img id="imgNotice" src="/Notice_imgs/<%
+	<img id="imgNotice" name="imgNotice" src="/Notice_imgs/<%
 	rDTO.getContent(); %>" width='100px' height='100px'>
 	<input type="submit" value="전송">
 	</form>

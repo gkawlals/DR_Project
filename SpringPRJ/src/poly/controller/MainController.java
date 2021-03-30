@@ -73,7 +73,6 @@ public class MainController {
 			// 웹서버에 업로드한 파일 저장하는 물리적 경로 
 			String  saveFilePath = FileUtil.mkdirForDate(FILE_UPLOAD_SAVE_PATH);
 			
-			
 			String fullFileInfo = saveFilePath + "/" +saveFileName;
 			
 			// 정상적으로 파일을 업로드했는지 확인하기
@@ -90,7 +89,7 @@ public class MainController {
 			pDTO.setContent(saveFileName); // file 경로 
 			pDTO.setNotice(saveFilePath); // file 이름 
 			
-			NoticeDTO rDTO = BoardService.getImage(pDTO);
+			NoticeDTO rDTO = BoardService.getImage(pDTO, null);
 			
 			if(rDTO == null) {
 				rDTO = new NoticeDTO();
