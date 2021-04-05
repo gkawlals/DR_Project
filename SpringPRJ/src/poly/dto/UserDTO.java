@@ -11,7 +11,6 @@ public class UserDTO {
 	private String pwd; // 비번
 	private String name; // 이름
 	private String email; // eamil 
-	private String gender; // 성별
 	private String reg_dt; // 가입 일
 	private String update_dt; // 수정날
 	private String exists_yn; // 중복확인 이메일 유무 
@@ -40,12 +39,7 @@ public class UserDTO {
 	public void setReg_dt(String reg_dt) {
 		this.reg_dt = reg_dt;
 	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+
 	public String getUpdate_dt() {
 		return update_dt;
 	}

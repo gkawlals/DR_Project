@@ -1,46 +1,128 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../resourceLogin/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resourceLogin/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resourceLogin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resourceLogin/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../resourceLogin/vendor/css-hamburgers/hamburgers.min.css">
+<!--============================================== ===============================================-->
+	<link rel="stylesheet" type="text/css" href="../resourceLogin/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../resourceLogin/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../resourceLogin/css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="../resourceLogin/images/img-01.png" alt="IMG" onclick="location.href='loginPage.do'">
+				</div>
 
-<form action="/user/UserLoginProc.do" method="post">
-<div id="container" role="main">
-	<div id="content">
-	  <h2 class="blind">회원가입</h2>
-			<div> 
-				<span name="IdVal"> 아이디 : </span>	
-				<input name="IdText" type="text"></input>
+				<form class="login100-form validate-form">
+					<span class="login100-form-title">
+						Circle SignUp
+					</span>
+															<!-- data-validate = 공백일때 경고문구를 보여주기  -->
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" placeholder="ID">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					
+					
+					<div class="container-login100-form-btn validate-input">
+						<button class="login100-form-btn" onclick="location.href='/user/UserProc.do'">
+							SignUp
+						</button>
+					</div>
+
+					<div class="text-center p-t-12" >
+						<span class="txt1">
+							Forgot
+						</span>
+						<button class="txt2" onclick="location.href='/user/FindPass.do'">
+							Username / Password?
+						</button>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="/user/SignUp.do">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
 			</div>
-			<div> 
-				<span name="PassVal"> 비밀번호 : </span>	
-				<input name="PassText" type="text" maxlength="16"></input>
-			</div>
-			<div> 
-				<span name="NameVal"> 이름 : </span>	
-				<input name="NameText" type="text" ></input>
-			</div>
-			<div> 
-				<span name="EmailVal"> 이메일 : </span>	
-				<input name="EmailText" type="email" ></input>
-			</div>
-			<div> 
-				<select id="gender" name="gender" class="sel" aria-label="성별">
-					<option value="" selected> 성별 </option>
-					<option value="M" > 남자 </option>
-					<option value="F " > 여자 </option>
-					<option value="U" > 선택안함 </option>
-				</select>
-			</div>
-			<div> 	
-				<input name="Login_infor_send" type="submit" value="회원가입"></input>
 		</div>
 	</div>
-</div>
-</form>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="../resourceLogin/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resourceLogin/vendor/bootstrap/js/popper.js"></script>
+	<script src="../resourceLogin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resourceLogin/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../resourceLogin/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="../resourceLogin/js/main.js"></script>
+
 </body>
 </html>
