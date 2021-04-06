@@ -41,7 +41,7 @@ public class UserService implements IUserService{
 	public int SignUp(UserDTO uDTO) throws InvalidKeyException, 
 	UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, 
 	InvalidAlgorithmParameterException, IllegalBlockSizeException, BadPaddingException {
-		// TODO Auto-generated method stub
+
 				int res = 0;
 				
 				// 들어오는 결과값이 없을때 새로운것을 메모리로 올린다. 
@@ -69,11 +69,11 @@ public class UserService implements IUserService{
 						
 						MailDTO mDto = new MailDTO();
 						
-						mDto.setToMail(EncryptUtil.decAES128CBC(CmmUtil.nvl(uDTO.getEmail())));
+						mDto.setToMail(EncryptUtil.decAES128CBC(CmmUtil.nvl(uDTO.getUser_email())));
 						
 						mDto.setTitle("회원가입을축하드립니다.");
 						
-						mDto.setContent(CmmUtil.nvl(uDTO.getName())+"님의 회원가입을 축하드립니다.");
+						mDto.setContent(CmmUtil.nvl(uDTO.getUser_name())+"님의 회원가입을 축하드립니다.");
 						
 						MailService.sendMailResult(mDto);
 						
@@ -82,7 +82,7 @@ public class UserService implements IUserService{
 					}
 				}
 				return res;
-	}
+		}
 
 
 	

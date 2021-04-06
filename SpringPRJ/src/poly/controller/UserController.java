@@ -1,8 +1,5 @@
 package poly.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -26,17 +23,6 @@ public class UserController {
 	@Resource(name = "UserService")
 	private IUserService userService;
 	
-	@RequestMapping(value="user/UserLogin.do")
-	public String userLogin(HttpServletRequest request, ModelMap model) {
-		
-		log.info(this.getClass() + "user/userLogin start!!");
-		
-		log.info(this.getClass() + "user/userLogin end!!");
-		
-		return "/user/UserLogin.do";
-	}
-	
-
 	@RequestMapping(value = "user/SignUp.do")
 	public String newUser (HttpServletRequest request, ModelMap model) throws Exception {
 		
@@ -48,27 +34,25 @@ public class UserController {
 		
 		try {
 			
-			String user_id  = request.getParameter("IdText");
-			String password  = request.getParameter("PassText");
-			String user_name  = request.getParameter("NameText");
-			String email  = request.getParameter("EmailText");
-			String gender  = request.getParameter("gender");
+			String user_id  = request.getParameter("user_id");
+			String user_pwd  = request.getParameter("user_pwd");
+			String user_name  = request.getParameter("user_name");
+			String user_email  = request.getParameter("user_email");
 			
 			log.info(user_id);
-			log.info(password);
+			log.info(user_pwd);
 			log.info(user_name);
-			log.info(email);
-			log.info(gender);
+			log.info(user_email);
 			
 			uDTO = new UserDTO();
 			
-			uDTO.setId(user_id);
-			uDTO.setPwd(password);
-			uDTO.setName(user_name);
-			uDTO.setEmail(email);
-			uDTO.setGender(gender);
+			uDTO.setUser_id(user_id);
+			uDTO.setUser_pwd(user_pwd);
+			uDTO.setUser_name(user_name);
+			uDTO.setUser_email(user_email);
 			
 			int res = userService.SignUp(uDTO);
+			
 			log.info(res);
 			
 			if ( res < 1) {
@@ -80,12 +64,16 @@ public class UserController {
 			}
 			
 		}catch ( Exception e) {
+			
 			msg = " 회원가입에 실패하였습니다. ";
 			log.info(msg);
 			e.printStackTrace();
+			
 		}finally {
+			
 			model.addAttribute("msg",msg);
 			model.addAttribute("url",url);
+			
 			log.info(this.getClass().getName() + "SignUp end !!");
 			
 			uDTO = null;
@@ -99,29 +87,35 @@ public class UserController {
 	public String userLoginProc(HttpServletRequest request, ModelMap model, HttpSession session) throws Exception{
 		log.info(this.getClass() + "user/userLoginProc start!!");
 		
-		String id = CmmUtil.nvl(request.getParameter("IdText"));
-		String pwd = CmmUtil.nvl(request.getParameter("PassText"));
+		String user_id = CmmUtil.nvl(request.getParameter("user_id"));
+		String user_pwd = CmmUtil.nvl(request.getParameter("user_pwd"));
 
 		UserDTO uDTO = new UserDTO();
 		
-		uDTO.setId(id);
-		uDTO.setPwd(pwd);
+		uDTO.setUser_id(user_id);
+		uDTO.setUser_pwd(user_pwd);
 		
 		uDTO = userService.getLoginInfo(uDTO);
 		
 		log.info("uDTO null?" + (uDTO == null));
+		
 		String msg = "";
 		String url = "";
 		
 		if(uDTO == null) {
+			
 			msg = "로그인 실패";
+			
 		} else {
-			log.info("uDTO ID : " + uDTO.getId());
-			log.info("uDTO PWD : " + uDTO.getPwd());
-			log.info("uDTO NAME : " + uDTO.getName());
+			
+			log.info("uDTO ID : " + uDTO.getUser_id());
+			log.info("uDTO PWD : " + uDTO.getUser_pwd());
+			log.info("uDTO NAME : " + uDTO.getUser_name());
+			
 			msg = "로그인 성공";
-			session.setAttribute("id", uDTO.getId());
-			session.setAttribute("name", uDTO.getName());
+			
+			session.setAttribute("id", uDTO.getUser_id());
+			session.setAttribute("name", uDTO.getUser_name());
 		}
 		
 		url = "/";
@@ -140,6 +134,7 @@ public class UserController {
 
 		String msg = "";
 		String url = "";
+		
 		msg = "로그아웃 성공";
 		url = "/";
 		
@@ -158,8 +153,6 @@ public class UserController {
 	public String FindPassId(HttpSession session, Model model) throws Exception{
 		
 		log.info(this.getClass().getName() +  " FindPass_Page Open Start !");
-		
-		
 		
 		log.info(this.getClass().getName() +  " FindPass_Page Open End !");
 		

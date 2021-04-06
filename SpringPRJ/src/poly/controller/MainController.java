@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import poly.dto.NoticeDTO;
 import poly.service.IBoardService;
-import poly.util.CmmUtil;
+import poly.service.IUserService;
 import poly.util.DateUtil;
 import poly.util.FileUtil;
 
@@ -30,11 +30,24 @@ public class MainController {
 	@Resource(name="BoardService")
 	private IBoardService BoardService;
 	
+	@Resource(name="UserService")
+	private IUserService userService;
+	
 	@RequestMapping(value="MainPage")
 	public String Index() {
 		log.info(this.getClass());
 		
 		return "/MainPage";
+	}
+	
+	@RequestMapping(value="/user/loginPage.do")
+	public String userLogin(HttpServletRequest request, ModelMap model) {
+		
+		log.info(this.getClass() + "user/userLogin start!!");
+		
+		log.info(this.getClass() + "user/userLogin end!!");
+		
+		return "/user/UserLogin.do";
 	}
 	
 	@RequestMapping(value="loginPage")

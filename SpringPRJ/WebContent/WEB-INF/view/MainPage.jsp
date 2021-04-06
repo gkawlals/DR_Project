@@ -19,12 +19,12 @@
 <div >
 	<div>
 		<div>
-			<a href="loginPage.do"><input type="button" value="로그인"></a>
+			<input type="button" value="로그인" onclick="location.href='/user/loginPage.do'">
 		</div>
 	</div>
 	<div>
 		<div>
-			<a href="loginPage.do"><input type="button" value=" 마이페이지"></a>
+			<input type="button" value="마이페이지" onclick="location.href='/user/MyPage.do'">
 		</div>
 	</div>
 	<div>

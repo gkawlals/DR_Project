@@ -38,7 +38,7 @@
 					</span>
 															<!-- data-validate = 공백일때 경고문구를 보여주기  -->
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="ID">
+						<input class="input100" type="text" name="user_id" placeholder="ID">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -46,7 +46,15 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="password">
+						<input class="input100" type="password" name="user_pwd" placeholder="password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					<!-- 비밀번호 확인 위의 text와 같지않다면 바로 경고문구 보여주기 -->
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="user_pwd2" placeholder="password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -54,22 +62,14 @@
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
-					
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="name">
+						<input class="input100" type="text" name="user_name" placeholder="name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="email">
+						<input class="input100" type="email" name="user_email" placeholder="email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -103,10 +103,7 @@
 			</div>
 		</div>
 	</div>
-	
-	
 
-	
 <!--===============================================================================================-->	
 	<script src="../resourceLogin/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

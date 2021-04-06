@@ -3,37 +3,37 @@
 <mapper namespace="poly.persistance.mapper.IUserMapper">
 
 	<!-- 아이디 비밀번호를 기준으로 로그인  -->
-<select id="getLoginInfo" resultType="UserDTO">
-SELECT 
-NO, 
-ID, 
-PWD, 
-NAME 
-FROM DRUserTable
-WHERE ID=#{id} AND PWD=#{pwd}
-</select>
+	<select id="getLoginInfo" resultType="UserDTO">
+		SELECT 
+			USER_NO, 
+			USER_ID, 
+			USER_PWD, 
+			USER_NAME 
+			FROM USER_TABLE
+		WHERE ID=#{user_id} AND PWD=#{user_pwd}
+	</select>
 
-<insert id="SignUp" parameterType="UserDTO" >
-INSERT INTO DRUserTable ( 
-USER_NO,
-USER_ID, 
-NAME, 
-PASSWORD,
-EMAIL
-) VALUES ( 
-USER_SEQ.NEXTVAL,
-#{user_id},	
-#{name},
-#{password},
-#{email}
-)
-</insert>
+	<insert id="SignUp" parameterType="UserDTO" >
+		INSERT INTO USER_TABLE ( 
+			USER_NO,
+			USER_ID, 
+			USER_NAME, 
+			USER_PWD,
+			USER_EMAIL
+		) VALUES ( 
+			USER_SEQ.NEXTVAL,
+			#{user_id},	
+			#{user_name},
+			#{user_pwd},
+			#{user_email}	
+			)
+	</insert>
 
-<select id="getUserExists" parameterType="UserDto" resultType="UserDto">
-	<!-- 이문구는  -->
-	SELECT DECODE(COUNT(1), 0, 'N','Y') AS EXISTS_YN
-		FROM DRUserTable
-	WHERE EMAIL = #{email}
-</select>
+	<select id="getUserExists" parameterType="UserDto" resultType="UserDto">
+		<!-- 이문구는  -->
+		SELECT DECODE(COUNT(1), 0, 'N','Y') AS EXISTS_YN
+			FROM USER_TABLE
+		WHERE USER_EMAIL = #{email}
+	</select>
 
 </mapper>
