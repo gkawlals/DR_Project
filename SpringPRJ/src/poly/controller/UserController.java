@@ -22,10 +22,16 @@ public class UserController {
 	@Resource(name="UserService")
 	private IUserService userService;
 	
-	@RequestMapping(value="user/userIn")
+	@RequestMapping(value="user/loginPage")
+	public String loginPage() {
+		log.info(this.getClass().getName() + " .user/loginPage start");
+		return "user/loginPage";
+	}
+	
+	@RequestMapping(value="user/SignUp")
 	public String userIn() {
 		log.info(this.getClass().getName() + " .user/userIn start !");
-		return"/user/userIn";
+		return"user/SignUp";
 	}
 	
 	@RequestMapping(value="user/LoginForm")

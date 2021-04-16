@@ -3,25 +3,20 @@
 <mapper namespace="poly.persistance.mapper.IUserMapper">
 
 	<!-- 아이디 비밀번호를 기준으로 로그인  -->
-	<select id="getLoginInfo" resultType="UserDTO">
+	<select id="getUserLoginCheck" resultType="UserDTO">
 		SELECT 
-			USER_NO, 
-			USER_ID, 
-			USER_PWD, 
-			USER_NAME 
+			USER_ID
 			FROM USER_TABLE
-		WHERE ID=#{user_id} AND PWD=#{user_pwd}
+		WHERE USER_ID=#{user_id} AND USER_PWD=#{user_pwd}
 	</select>
 
-	<insert id="SignUp" parameterType="UserDTO" >
+	<insert id="InsertUserInfo" parameterType="UserDTO" >
 		INSERT INTO USER_TABLE ( 
-			USER_NO,
 			USER_ID, 
 			USER_NAME, 
 			USER_PWD,
 			USER_EMAIL
 		) VALUES ( 
-			USER_SEQ.NEXTVAL,
 			#{user_id},	
 			#{user_name},
 			#{user_pwd},
@@ -30,7 +25,7 @@
 	</insert>
 
 	<select id="getUserExists" parameterType="UserDto" resultType="UserDto">
-		<!-- 이문구는  -->
+		<!-- 이메일을 기준으로 중복체크   -->
 		SELECT DECODE(COUNT(1), 0, 'N','Y') AS EXISTS_YN
 			FROM USER_TABLE
 		WHERE USER_EMAIL = #{email}

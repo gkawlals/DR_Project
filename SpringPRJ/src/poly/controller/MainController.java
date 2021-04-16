@@ -40,23 +40,6 @@ public class MainController {
 		return "/MainPage";
 	}
 	
-	@RequestMapping(value="/user/loginPage.do")
-	public String userLogin(HttpServletRequest request, ModelMap model) {
-		
-		log.info(this.getClass() + "user/userLogin start!!");
-		
-		log.info(this.getClass() + "user/userLogin end!!");
-		
-		return "/user/UserLogin.do";
-	}
-	
-	@RequestMapping(value="loginPage")
-	public String loginPage() {
-		log.info(this.getClass());
-		
-		return "/loginPage";
-	}
-	
 	@RequestMapping(value="Filetest")
 	public String Filetest() {
 		

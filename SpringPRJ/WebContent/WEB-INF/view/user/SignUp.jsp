@@ -61,6 +61,26 @@
 						</span>
 					</div>
 					
+					<script>
+					
+						$function(){
+							$('#user_pwd').keyup(function(){
+								$('font[name=check]').text('');
+							});  // user_pwd.keyup
+							
+							$('#user_pwd2').keyup(function(){
+								if($('#user_pwd').val() != $('$user_pwd2').val()){
+									$('font[name=check]').text('');
+									$('font[name=check]').html("암호 틀림");
+								}else {
+									$('font[name=check]').text('');
+									$('font[name=check]').html("암호 맞음");
+								}
+							})
+						}
+					
+					</script>
+					
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<input class="input100" type="text" name="user_name" placeholder="name">
 						<span class="focus-input100"></span>
@@ -79,7 +99,7 @@
 					
 					
 					<div class="container-login100-form-btn validate-input">
-						<button class="login100-form-btn" onclick="location.href='/user/UserProc.do'">
+						<button class="login100-form-btn" onclick="location.href='/user/InsertUserInfo.do'">
 							SignUp
 						</button>
 					</div>

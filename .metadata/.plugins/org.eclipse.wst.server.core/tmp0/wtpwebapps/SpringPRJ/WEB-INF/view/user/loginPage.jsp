@@ -54,7 +54,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn validate-input">
-						<button class="login100-form-btn" onclick="location.href='/user/UserProc.do'">
+						<button class="login100-form-btn" onclick="location.href='user/getUserLoginCheck.do'">
 							Login
 						</button>
 					</div>

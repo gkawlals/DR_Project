@@ -10,7 +10,7 @@
 		WHERE USER_ID=#{user_id} AND USER_PWD=#{user_pwd}
 	</select>
 
-	<insert id="SignUp" parameterType="UserDTO" >
+	<insert id="InsertUserInfo" parameterType="UserDTO" >
 		INSERT INTO USER_TABLE ( 
 			USER_ID, 
 			USER_NAME, 
