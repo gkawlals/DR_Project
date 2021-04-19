@@ -41,6 +41,20 @@ public class UserController {
 		return "user/LoginForm";
 	}
 	
+	@RequestMapping(value="user/FindPass")
+	public String FindPass() {
+		
+		log.info(this.getClass().getName() + " .user/FindPass start !");
+		return "user/FindPass";
+	}
+	
+	@RequestMapping(value="user/MyPage")
+	public String MyPage() {
+		
+		log.info(this.getClass().getName() + " .user/MyPage start !");
+		return "user/MyPage";
+	}
+	
 	@RequestMapping(value="user/getUserLoginCheck")
 	public String getUserLoginCheck (HttpSession session, HttpServletRequest request, HttpServletResponse 
 			response, ModelMap model) throws Exception {
