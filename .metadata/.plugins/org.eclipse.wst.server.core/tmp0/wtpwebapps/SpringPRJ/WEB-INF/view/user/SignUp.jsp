@@ -32,7 +32,7 @@
 					<img src="../resourceLogin/images/img-01.png" alt="IMG" onclick="location.href='loginPage.do'">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="/user/InsertUserInfo.do" method="post">
 					<span class="login100-form-title">
 						Circle SignUp
 					</span>
@@ -96,12 +96,9 @@
 						</span>
 					</div>
 					
-					
-					
 					<div class="container-login100-form-btn validate-input">
-						<button class="login100-form-btn" onclick="location.href='/user/InsertUserInfo.do'">
-							SignUp
-						</button>
+						<input type="submit" value="SignUp" class="login100-form-btn" />
+				
 					</div>
 
 					<div class="text-center p-t-12" >
@@ -113,12 +110,6 @@
 						</button>
 					</div>
 
-					<div class="text-center p-t-136">
-						<a class="txt2" href="/user/SignUp.do">
-							Create your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
 				</form>
 			</div>
 		</div>

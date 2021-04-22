@@ -153,8 +153,6 @@ public class UserController {
 			model.addAttribute("pDTO",pDTO);
 		}
 		
-		log.info(this.getClass().getName() + " .InsertUserInfo End ! ");
-		
 		return "user/InsertUserInfo";
 	}
 

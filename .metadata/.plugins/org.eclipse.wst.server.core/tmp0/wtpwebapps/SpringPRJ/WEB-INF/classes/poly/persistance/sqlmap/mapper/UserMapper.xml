@@ -24,11 +24,12 @@
 			)
 	</insert>
 
-	<select id="getUserExists" parameterType="UserDto" resultType="UserDto">
+	<select id="getUserExists" parameterType="UserDTO" resultType="UserDTO">
 		<!-- 이메일을 기준으로 중복체크   -->
-		SELECT DECODE(COUNT(1), 0, 'N','Y') AS EXISTS_YN
+		SELECT IF(COUNT(1), 'N','Y') AS EXISTS_YN
 			FROM USER_TABLE
-		WHERE USER_EMAIL = #{email}
+		WHERE USER_EMAIL = #{user_email}
+
 	</select>
 
 </mapper>

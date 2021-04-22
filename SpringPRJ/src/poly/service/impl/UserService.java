@@ -1,6 +1,14 @@
 
 package poly.service.impl;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+
 import javax.annotation.Resource;
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -18,8 +26,10 @@ public class UserService implements IUserService{
 	@Resource(name="UserMapper")
 	private IUserMapper userMapper;
 	
-	 @Override
-	 public int InsertUserInfo(UserDTO pDTO)throws Exception {
+	@Override
+	 public int InsertUserInfo(UserDTO pDTO) throws InvalidKeyException, 
+		UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException,
+		InvalidAlgorithmParameterException, IllegalBlockSizeException, BadPaddingException {
 		 
 		 log.info(this.getClass().getName() + " .InsertUserInfo Start!");
 		 
@@ -31,20 +41,24 @@ public class UserService implements IUserService{
 		 }
 		 
 		 UserDTO rDTO = userMapper.getUserExists(pDTO);
+		 log.info(this.getClass().getName() + " .mapper end");
 		 
 		 
 		 if(rDTO == null ) {
 			 rDTO = new UserDTO();
 		 }
 		 
-		if(CmmUtil.nvl(rDTO.getExists_yn()).equals("Y")) {
+		if(CmmUtil.nvl(rDTO.getExists_yn()).equals("N")) {
+			log.info(" 중복된 아이디 입니다.");
 			res = 2;
 		}else { 
 			int success = userMapper.InsertUserInfo(pDTO);
 			
 			if(success > 0) {
+				log.info("회원가입 완료");
 				res = 1;
 			}else {
+				log.info(" 알수없는 에러");
 				res = 0;
 			}
 		}
